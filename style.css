@@ -37,11 +37,11 @@ body {
   grid-gap: 0.2rem;
 }
 
-.svg-container {
+/*.svg-container {
   padding: 30px;
-  /* width: 600px;
-  height: 600px; */
-}
+   width: 600px;
+  height: 600px; 
+}*/
 
 #map {
   /* overflow: hidden; */
@@ -87,6 +87,22 @@ select>option {
   stroke-width: 1px;
 }
 
+.stnames{
+  font-size:10px;
+  fill: blue;
+  font-weight: bolder;
+}
+
+.lmarks{
+  stroke:darkmagenta;
+  stroke-width: 5px;
+  fill:none;
+}
+.pumps{
+  stroke:red;
+  stroke-width: 3px;
+  fill:none;
+}
 /*.topnav {
   overflow: hidden;
   background-color: darkseagreen;
@@ -174,7 +190,7 @@ select>option {
 
 div.content {
   margin-left: 200px;
-  padding: 1px 16px;
+  /* padding: 1px 16px; */
   height: 1000px;
 }
 
