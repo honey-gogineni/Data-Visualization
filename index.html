@@ -13,22 +13,33 @@
 	<div class="container">
 		<h1> Dr. John Snow's map of London's 1854 cholera epidemic</h1>
 	</div>
-	<div class="sidebar">
+	<div class="topnav">
 		<a class="active" href="index.html">Home</a>
 		<a href="documentation.html">Documentation</a>
 		<a href="video.html">Video</a>
-		<a href="mapcompare.html">Compare</a>
 	</div>
 	<div class="content">
 		<div id="main">
-			
 			<div id="map" class="svg-container"></div>
-			<div id="deaths" class="svg-container"></div>
-			<div id="distribution" class="svg-container"></div>
-			<div id="legend" class="svg-container"></div>
+			<div>
+				<div id="lines" class="svg-container"></div>
+				Street Map Legend:
+				<span class="landmarks">Landmarks </span> 
+				<span class="points male"></span> Male 
+				<span class="points female"></span> Female 
+				<span class="points pump"></span>Pump
+			</div>
+			<div>
+				<div id="age" class="svg-container"></div>
+				<div id="sex" class="svg-container"></div>
+			</div>
 		</div>
 	</div>
-	<script src="./script.js"></script>
+	<script src="./streetmap.js"></script>
+	<script src="./linechart.js"></script>
+	<script src="./agechart.js"></script>
+	<script src="./gendchart.js"></script>
+	<script src="./common.js"></script>
 </body>
 
 </html>
