@@ -1,49 +1,77 @@
-<!DOCTYPE html> 
-<html  lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Project 1 - Documentation</title>
-<link rel="stylesheet" href="style.css" />
-<link rel = "icon" href = "logo.png" type = "image/x-icon" target="_blank">
-</head>  
-<body>  
-        <div class="container"> 
-    <center> <h1> Dr. John Snow's map of London's 1854 cholera epidemic </h1> </center> 
-	<hr>
-         </div> 
-		<div class="topnav">
-		  <a href="index.html">Home</a>
-          <a class="active" href="documentation.html">Documentation</a>
-          <a href="video.html">Video</a>
-        </div> 
-		<div class="content">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project 1 - Documentation</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="icon" href="logo.png" type="image/x-icon" target="_blank">
+</head>
+
+<body>
+	<div class="container">
+		<center>
+			<h1> Dr. John Snow's map of London's 1854 cholera epidemic </h1>
+		</center>
+		<hr>
+	</div>
+	<div class="topnav">
+		<a href="index.html">Home</a>
+		<a class="active" href="documentation.html">Documentation</a>
+		<a href="video.html">Video</a>
+	</div>
+	<div class="content">
 		<h2>Introduction:</h2>
-		<p> The cholera epidemic in the nineteenth century was a major global calamity that caused multiple widespread pandemics 
-			in European countries. The London area experienced a series of cholera outbreaks during the years of 1848 and 1854 
-			that claimed a significant number of lives. In a central London neighborhood called Soho with unsanitary businesses 
-			and housing, cholera pandemics have occurred around Broad (now Broadwick Street) Street, Golden Square. 
-			Dr. Snow, an obstetrician with expertise in many clinical scientific fields, oversaw pioneering investigations on 
-			cholera pestilences in which he demonstrated that tainted water was the primary cause of the illness.
-			His thorough investigation of the epidemic led him to the conclusion that the disease was caused by contaminated water
-			from the Broad Street siphon, and the removal of the handle caused the pandemic to end. He went on to explain that
-			they were using two water supply systems to receive their water, one from a portion of the Thames River that had been
-			polluted by sewage and the other that got its water upstream from a section of a stream that had not been poisoned. 
-			He created a map of London, water-dispersed frameworks, and examined cholera cases among water users of two different
-			suppliers based on their water usage. Members of the appropriation framework using tainted water experienced sickness 
-			rates that were significantly higher than those of the organization whose water was supplied above the polluted section 
-			of the creek. The goals of the sterilization movement were advanced by this display, which led to the construction of sewage 
-			disposal systems and water purification systems in urban areas and towns during the following decades, which reduced the 
-			prevalence of cholera and other illnesses. </p>
+		<p> The cholera epidemic in the nineteenth century was a major global calamity that caused multiple widespread
+			pandemics in European countries. The London area experienced a series of cholera outbreaks during the years
+			of 1848 and 1854 that claimed a significant number of lives. In a central London neighborhood called Soho
+			with unsanitary businesses and housing, cholera pandemics have occurred around Broad (now Broadwick Street)
+			Street, Golden Square. Dr. Snow, an obstetrician with expertise in many clinical scientific fields, oversaw
+			pioneering investigations on cholera pestilences in which he demonstrated that tainted water was the primary
+			cause of the illness. His thorough investigation of the epidemic led him to the conclusion that the disease
+			was caused by contaminated water from the Broad Street siphon, and the removal of the handle caused the
+			pandemic to end. He went on to explain that they were using two water supply systems to receive their water,
+			one from a portion of the Thames River that had been polluted by sewage and the other that got its water
+			upstream from a section of a stream that had not been poisoned. He created a map of London, water-dispersed
+			frameworks, and examined cholera cases among water users of two different suppliers based on their water
+			usage. Members of the appropriation framework using tainted water experienced sickness rates that were
+			significantly higher than those of the organization whose water was supplied above the polluted section of
+			the creek. The goals of the sterilization movement were advanced by this display, which led to the
+			construction of sewage disposal systems and water purification systems in urban areas and towns during the
+			following decades, which reduced the prevalence of cholera and other illnesses. </p>
 		<h2>Objective:</h2>
 		<p> To regenerate Dr.John Snow's map original map in an interactive version using today's
-			tools of trade (D3, to be specific) </p>
+			tools of trade (D3, to be specific). </p>
 		<h2>Design:</h2>
 		<p> The requirements and the scope along with the data files such as street coordinates, nearby pumps,
-			deaths, age and sex details can be accessed <a href="https://khreda.com/teaching/fall22/H517/project1/">here</a>.
-			I started exploring the dataset and tried to understand the data. After familiarizing myself with the data, I started 
-			designing my template for the dashboard.
-		     </p>
-		
-		</div>
-</body>   
+			deaths, age and sex details can be accessed <a
+				href="https://khreda.com/teaching/fall22/H517/project1/">here</a>.
+			I started exploring the dataset and tried to understand the data. After familiarizing myself with the data,
+			I started designing my template for the dashboard.
+		</p>
+		<p>After finalizing the template I decided to draw the sample charts for my design and I ended up with one
+			street map for 'Soho Map with Victims and Pump Locations Plotted', one line chart for 'Number of Victims
+			Plotted over Time' and two pie charts for 'Additional Chart showing the Distribution of Victim Age/Sex'.</p>
+		<p>
+			I started designing the street map and generated the lines for streets and later labeled street names for
+			six streets. Once the street map backdrop is generated then I added the pumps and the landmarks(Work house
+			and Brewery). Later I generated the map points for individuals affected by cholera.
+			Then analyzed the valuable information from datasets. I added the legend with the map symbols, landmarks 
+			that are indicated on the map.</p>
+		<img src="images/stmap.png" alt="Street Map" width="300" height="300">
+		<img src="images/legend.PNG" alt="Legend for street map">
+		<p>Next I started designing the line chart with the deaths based on the coordinates from the deaths_age_sex file
+			with the x and y axis and also the grids, and added the transition to the line chart and also added resizing
+			and labels with tooltip when hovered.</p>
+		<img src="images/line.PNG" alt="Line Chart with weeks and deaths" width="300" height="300">
+		<p>
+			Then I designed two pie charts for the distribution of deaths among the age groups and the sex.I added the
+			labels with tooltip when hovered and also added interaction between the map and the charts.I designed the
+			pie chart for the deaths distribution among the sex with as a semi circle as the distribution is only among
+			the two quantities.</p>
+		<img src="images/age.PNG" alt="Pie Chart with age groups" width="200" height="200">
+		<img src="images/sex.PNG" alt="Pie Chart with genders" width="200" height="120">
+	</div>
+</body>
+
 </html>

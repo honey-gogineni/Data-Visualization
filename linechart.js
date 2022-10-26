@@ -68,7 +68,7 @@ function drawLineChart() {
 		.attr("stroke-dasharray", `0,${l}`)
 		.attr("d", line)
 		.transition()
-		.duration(1500)
+		.duration(1000)
 		.ease(d3.easeLinear)
 		.attr("stroke-dasharray", `${l},${l}`);
 	let pointsg = linesvg.append('g');

@@ -24,12 +24,6 @@ function drawAgePie() {
         .domain([0, 1, 2, 3, 4, 5])
         .range(['red', 'orange', 'yellow', 'lightgreen', 'teal', 'blueviolet']);
 
-
-    const ages = d3
-        .scaleOrdinal()
-        .domain([0, 1, 2, 3, 4, 5])
-        .range(["0-10", "11-21", "21-40", "41-60", "61-80", ">80"]);
-
     let ageg = d3.group(agesex, (d) => +d.age);
     ageg = d3.sort(ageg, (d) => +d[0]);
     // Grouping different arcs

@@ -32,16 +32,15 @@ function drawStreetMap() {
 
 	// drawing street names
 	const stName = [
-		{ name: 'POLAND STREET', x: 347, y: 160, rotate: 68 },
-		{ name: 'BROAD STREET', x: 378, y: 320, rotate: -28 },
-		{ name: 'RUPERT STREET', x: 580, y: 525, rotate: -115 },
-		{ name: 'REGENT STREET', x: 207, y: 350, rotate: 62 },
-		{ name: 'CONDUIT STREET', x: 152, y: 400, rotate: -55 },
-		{ name: 'OXFORD STREET', x: 307, y: 125, rotate: -12 },
-		{ name: 'DEAN STREET', x: 550, y: 210, rotate: 67 },
-		{ name: 'Brewery', x: 448, y: 330, rotate: -116 },
-		{ name: 'Work', x: 325, y: 257, rotate: -28 },
-		{ name: 'House', x: 330, y: 270, rotate: -28 },
+		{ name: 'POLAND STREET', x: 293, y: 120, rotate: 70 },
+		{ name: 'RUPERT STREET', x: 521, y: 487, rotate: -117 },
+		{ name: 'REGENT STREET', x: 165, y: 300, rotate: 62 },
+		{ name: 'CONDUIT STREET', x: 112, y: 349, rotate: -55 },
+		{ name: 'OXFORD STREET', x: 254, y: 96, rotate: -11 },
+		{ name: 'DEAN STREET', x: 510, y: 245, rotate: 67 },
+		{ name: 'Brewery', x: 385, y: 290, rotate: -116 },
+		{ name: 'Work', x: 275, y: 205, rotate: -28 },
+		{ name: 'House', x: 275, y: 218, rotate: -28 },
 	];
 	let stnameg = mapsvg.append('g');//.attr('class', 'streets');
 
@@ -59,9 +58,9 @@ function drawStreetMap() {
 	// Plotting Landmarks - brewery and work house
 	const landmarks = [
 		//brewery
-		{ x: 439, y: 338, rotate: -116, w: 40, h: 19 },
+		{ x: 375, y: 300, rotate: -116, w: 45, h: 22 },
 		//work house
-		{ x: 322, y: 282, rotate: -116, w: 35, h: 50 },
+		{ x: 270, y: 230, rotate: -116, w: 35, h: 45 },
 	];
 
 	let lmarksg = mapsvg.append('g');
@@ -107,8 +106,17 @@ function drawStreetMap() {
 			.attr("cx", d => xScale(d.x))
 			.attr("cy", d => yScale(d.y))
 			.attr("r", 4)
-			.attr('class', (d) => `map-point map-point-${formatDate(d.date)} map-point-${+d.gender === 0 ? 'male' : 'female'} age-${+d.age}`);
-
+			.attr('class', (d) => `map-point map-point-${formatDate(d.date)} map-point-${+d.gender === 0 ? 'male' : 'female'} age-${+d.age}`)
+			.on("mouseover", (event, data) => {
+				showTooltip(`Date: ${formatDate(data.date)}<br/>Gender: ${+data.gender === 0 ? 'Male' : 'Female'}<br/>Age: ${ages(+data.age)}`,
+					event.pageX + 20, event.pageY - 20);
+			})
+			.on("mousemove", (event, data) => {
+				moveTooltip(event.pageX + 20, event.pageY - 20);
+			})
+			.on("mouseout", (event, data) => {
+				hideTooltip();
+			});
 		mappg.selectAll('.map-point').data(agesex).exit().remove();
 	}
 	drawPoints();
